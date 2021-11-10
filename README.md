@@ -25,7 +25,7 @@ quasar build
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 
-![Alt text](AppIcon.png?raw=true | width=300)
+![Alt text](AppIcon.png?raw=true&width=300)
 ![Alt text](screenshots/1.jpg?raw=true)
 ![Alt text](screenshots/2.jpg?raw=true)
 ![Alt text](screenshots/3.jpg?raw=true)
