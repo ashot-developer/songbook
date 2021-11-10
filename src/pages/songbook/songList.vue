@@ -31,7 +31,6 @@
 <script>
 import { Notify } from "quasar";
 
-
 export default {
   name: "songList",
   data() {
@@ -52,12 +51,12 @@ export default {
           type: "negative",
           position: "top",
           message: "Խնդրում ենք գրել համարը",
-          timeout: 500
+          timeout: 500,
         });
       }
     },
   },
-}
+};
 </script>
 
 <style lang="sass">
@@ -67,7 +66,5 @@ export default {
       height: 40px !important
 
 .sb-list-card
-  padding-bottom: 60px  
-
-    
+  padding-bottom: 60px
 </style>

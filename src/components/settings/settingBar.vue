@@ -6,7 +6,13 @@
         <div class="row q-pa-md q-mb-sm">
           <div class="col-12">
             <q-badge color="primary"> Տառաչափ {{ basicModel }} փիք․ </q-badge>
-            <q-slider @change="saveSettings()" v-model="basicModel" :step="1" :min="8" :max="35" />
+            <q-slider
+              @change="saveSettings()"
+              v-model="basicModel"
+              :step="1"
+              :min="8"
+              :max="35"
+            />
           </div>
           <q-separator class="q-mr-sm q-ml-sm" />
           <div class="col-12">
@@ -49,7 +55,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import db from 'src/services/db.service'
+import db from "src/services/db.service";
 
 export default {
   name: "settingBar",
@@ -61,22 +67,22 @@ export default {
   },
   methods: {
     ...mapActions({
-      setSettings: 'setting/setSettings',
+      setSettings: "setting/setSettings",
     }),
     saveSettings() {
-      this.setSettings({fontSize: this.basicModel, background: this.hex})
-      db.insertIfExistsUpdate('settings', [this.basicModel, this.hex]);
-    }
+      this.setSettings({ fontSize: this.basicModel, background: this.hex });
+      db.insertIfExistsUpdate("settings", [this.basicModel, this.hex]);
+    },
   },
   computed: {
     ...mapGetters({
       fontSize: "setting/getFontSize",
-      background: "setting/getBackground"
+      background: "setting/getBackground",
     }),
   },
   mounted() {
     this.basicModel = Math.ceil(this.fontSize);
-    this.hex = this.background
+    this.hex = this.background;
   },
 };
 </script>

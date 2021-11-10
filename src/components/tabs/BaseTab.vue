@@ -25,10 +25,9 @@
 </template>
 
 <script>
-
 export default {
   name: "BaseTab",
-}
+};
 </script>
 
 <style lang="scss">

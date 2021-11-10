@@ -1,6 +1,8 @@
 <template>
   <div class="justify-center text-center" style="width: 100%">
-    <div class="sb-imagebox flex row justify-center items-center q-pa-md q-mb-xl">
+    <div
+      class="sb-imagebox flex row justify-center items-center q-pa-md q-mb-xl"
+    >
       <q-img src="../assets/images/bethel.png" width="125px" />
     </div>
     <p class="sb-textbox q-pa-md text-center">
@@ -26,10 +28,8 @@
 </template>
 
 <script>
-
-import { mapActions, mapGetters } from 'vuex';
-import { allSongs } from 'src/services/api/songs.api';
-
+import { mapActions, mapGetters } from "vuex";
+import { allSongs } from "src/services/api/songs.api";
 
 export default {
   name: "MainPage",
@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      'addSongs': 'song/addSongs'
+      addSongs: "song/addSongs",
     }),
     simulateProgress(number) {
       // we set loading state
@@ -55,13 +55,13 @@ export default {
   },
   computed: {
     ...mapGetters({
-      'getSong': 'song/getSongs'
-    })
+      getSong: "song/getSongs",
+    }),
   },
   mounted() {
     this.addSongs(allSongs);
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
@@ -74,7 +74,7 @@ export default {
   max-width: 500px;
   width: 100%;
   margin-right: auto;
-  margin-left: auto
+  margin-left: auto;
 }
 
 .sb-imagebox {

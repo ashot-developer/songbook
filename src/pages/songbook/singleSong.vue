@@ -14,13 +14,11 @@
         Երգ {{ number }}
       </p>
     </div>
-    <div v-html="songWords" class="sb-single q-pr-md q-pl-md" :style="` transition: all .1s; font-size: ${ newfontSize }px; background-color: ${background}`"></div>
-    <!-- <div class="sb-nextprev row justify-between" :class="{'right-unactive': isLast}">
-      <span class="material-icons q-mr-sm" @click="prevSong">
-        arrow_circle_left
-      </span>
-      <span class="material-icons" @click="nextSong"> arrow_circle_right </span>
-    </div> -->
+    <div
+      v-html="songWords"
+      class="sb-single q-pr-md q-pl-md"
+      :style="` transition: all .1s; font-size: ${newfontSize}px; background-color: ${background}`"
+    ></div>
     <span
       class="material-icons sb-bookmark q-mr-sm q-mt-sm"
       v-if="isMarked"
@@ -56,8 +54,8 @@ export default {
       getSong: "song/getSongs",
       getBookmarks: "song/getBookmarks",
       isMarked: "song/isMarked",
-      newfontSize: 'setting/getFontSize',
-      background: "setting/getBackground"
+      newfontSize: "setting/getFontSize",
+      background: "setting/getBackground",
     }),
   },
   methods: {
@@ -83,11 +81,12 @@ export default {
       this.getClearShow();
     },
     clearWords(words) {
-       return words
+      return words
         .replaceAll(" Նոտաները", "")
         .replaceAll(" Նոտաներ", "")
         .replaceAll(" Youtube &#9834;&#9835; &#10148;", "")
-        .replace(/^(\ ?<br( \/)?>\ ?)+|(\ ?<br( \/)?>\ ?)+$/, "").substring(words.indexOf("1."));
+        .replace(/^(\ ?<br( \/)?>\ ?)+|(\ ?<br( \/)?>\ ?)+$/, "")
+        .substring(words.indexOf("1."));
     },
     addToBookmark() {
       db.insertIntoTable("bookmark", ["songNumber"], [this.number]);
@@ -104,11 +103,11 @@ export default {
     },
     getClearShow() {
       this.songWords = this.getSong[this.number - 1].songWords;
-      this.$router.push('/song/' + this.number)
+      this.$router.push("/song/" + this.number);
       this.songWords = this.clearWords(this.songWords);
       this.setNumber(this.number);
       this.setMarked();
-    }
+    },
   },
   mounted() {
     this.number = this.$route.params.number;
@@ -116,8 +115,8 @@ export default {
     this.songWords = this.clearWords(this.songWords);
     this.setNumber(this.number);
     this.setMarked();
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>

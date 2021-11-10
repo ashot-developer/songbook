@@ -36,7 +36,6 @@
 </template>
 
 <script>
-
 export default {
   name: "SongList",
   data() {
@@ -60,7 +59,7 @@ export default {
       this.show = !this.show;
     },
   },
-}
+};
 </script>
 
 <style lang="scss">
