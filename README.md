@@ -27,10 +27,9 @@ See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 
 
 <img src="AppIcon.png" width=50% height=50%>
-![Alt text](AppIcon.png?raw=true&width=300)
-![Alt text](screenshots/1.jpg?raw=true)
-![Alt text](screenshots/2.jpg?raw=true)
-![Alt text](screenshots/3.jpg?raw=true)
-![Alt text](screenshots/4.jpg?raw=true)
-![Alt text](screenshots/5.jpg?raw=true)
-![Alt text](screenshots/6.jpg?raw=true)
+<img src="screenshots/1.jpg" width=50% height=50%>
+<img src="screenshots/2.jpg" width=50% height=50%>
+<img src="screenshots/3.jpg" width=50% height=50%>
+<img src="screenshots/4.jpg" width=50% height=50%>
+<img src="screenshots/5.jpg" width=50% height=50%>
+<img src="screenshots/6.jpg" width=50% height=50%>
