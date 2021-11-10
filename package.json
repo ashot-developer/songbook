@@ -1,0 +1,56 @@
+{
+  "name": "songbook",
+  "version": "0.0.1",
+  "description": "Հոգևոր երգարան",
+  "productName": "Երգարան",
+  "author": "Ashot Markosyan",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue ./",
+    "test": "echo \"No test specified\" && exit 0",
+    "icons": "icongenie generate -i AppIcon.png --skip-trim --theme-color 377992"
+  },
+  "dependencies": {
+    "@louislam/sqlite3": "^6.0.0",
+    "@quasar/extras": "^1.0.0",
+    "@vue/composition-api": "^0.5.0",
+    "@vuelidate/core": "^2.0.0-alpha.32",
+    "@vuelidate/validators": "^2.0.0-alpha.25",
+    "cordova-common": "^4.0.2",
+    "core-js": "^3.6.5",
+    "eslint-plugin-import": "^2.25.2",
+    "html-entities": "^2.3.2",
+    "localbase": "^0.7.5",
+    "quasar": "^2.0.0",
+    "string-width": "^5.0.1",
+    "strip-ansi": "^7.0.1",
+    "vue-i18n": "^8.26.7",
+    "vuex": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.13.14",
+    "@quasar/app": "^3.0.0",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-vue": "^7.7.0",
+    "eslint-webpack-plugin": "^2.5.4"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 12.22.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
