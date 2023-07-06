@@ -1,18 +1,19 @@
 <template>
   <div>
     <q-toolbar class="q-pa-sm text-white bg-primary">
+      <div v-if="$route.path !== '/songs'">
       <span
         class="material-icons sb-go-back"
-        v-if="!$route.params.number"
         @click="$router.back()"
         >arrow_back_ios</span
       >
-      <span
+      <!-- <span
         class="material-icons sb-go-back"
         v-else
         @click="$router.push('/songs')"
         >arrow_back_ios</span
-      >
+      > -->
+    </div>
       <q-toolbar-title
         v-if="!$route.params.number"
         class="text-center text-bold"

@@ -20,9 +20,9 @@
         class="col-4"
       />
     </div>
-    <q-list v-if="result.length" bordered padding class="rounded-borders">
+    <q-list v-if="getSearchedSongs.length" bordered padding class="rounded-borders">
       <q-item
-        v-for="song in result"
+        v-for="song in getSearchedSongs"
         :key="song.songNumber"
         :to="`/song/${song.songNumber}`"
         clickable
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 
 
@@ -59,12 +59,16 @@ export default {
   name: "searchSong",
   data() {
     return {
-      keyword: "",
       result: [],
       errorMessage: "",
+      keyword: ""
     };
   },
   methods: {
+    ...mapActions({
+      setSearchedSongs: 'song/setSearchedSongs',
+      setKeyword: 'song/setKeyword'
+    }),
     findSongByWord() {
       if(!this.keyword) {
         this.$q.notify({
@@ -76,6 +80,7 @@ export default {
 
         return;
       }
+      this.setKeyword(this.keyword);
       this.$q.loading.show();
 
       setTimeout(
@@ -94,6 +99,7 @@ export default {
           }, this);
           if (this.result.length) {
             this.errorMessage = "";
+            this.setSearchedSongs(this.result);
           } else {
             this.errorMessage = `<strong>${this.keyword}</strong> բառով կամ բառակապակցությամբ երգ չի գտնվել:`;
           }
@@ -115,9 +121,14 @@ export default {
       return words.substring(0, 50) + "...";
     },
   },
+  mounted() {
+    this.keyword = this.keywordS;
+  },
   computed: {
     ...mapGetters({
       getSongs: "song/getSongs",
+      getSearchedSongs: "song/getSearchedSongs",
+      keywordS: "song/getKeyword"
     }),
   },
 }

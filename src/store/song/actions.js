@@ -2,6 +2,14 @@ export function addSongs (context, payload) {
     context.commit('addSongs', payload)
 }
 
+export function setSearchedSongs(context, payload) {
+    context.commit('setSearchedSongs', payload)
+}
+
+export function setKeyword(context, payload) {
+    context.commit('setKeyword', payload)
+}
+
 export function loadBookmarks(context, payload) {
     context.commit('loadBookmarks', payload);
 }

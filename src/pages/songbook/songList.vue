@@ -30,6 +30,7 @@
 
 <script>
 import { Notify } from "quasar";
+import resetSearchMixin from 'src/mixins/resetSearchMixin';
 
 export default {
   name: "songList",
@@ -56,6 +57,10 @@ export default {
       }
     },
   },
+  mounted() {
+    this.resetSearch()
+  },
+  mixins: [resetSearchMixin]
 };
 </script>
 

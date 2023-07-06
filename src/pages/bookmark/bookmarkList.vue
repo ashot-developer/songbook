@@ -1,12 +1,11 @@
 <template>
   <div>
+    <q-item-label header style="font-size: 17px">Էջանշված երգեր</q-item-label>
     <q-list
       v-if="bookmarksList.length"
       bordered
-      padding
-      class="rounded-borders"
+      class="rounded-borders q-ma-sm bookmark-list"
     >
-      <q-item-label header style="font-size: 17px">Էջանշված երգեր</q-item-label>
       <q-item
         v-for="song in bookmarksList"
         :key="song.songNumber"
@@ -53,6 +52,7 @@
 <script>
 import { mapGetters } from "vuex";
 import db from "src/services/db.service";
+import resetSearchMixin from 'src/mixins/resetSearchMixin';
 
 export default {
   name: "bookmarkList",
@@ -79,6 +79,10 @@ export default {
       return words.substring(0, 50) + "...";
     },
   },
+  mounted() {
+    this.resetSearch()
+  },
+  mixins: [resetSearchMixin]
 };
 </script>
 
@@ -95,5 +99,10 @@ export default {
 }
 .marked_content {
   width: 100%;
+}
+
+.bookmark-list {
+  height: calc(100vh - 163px);
+  overflow-y: scroll;
 }
 </style>

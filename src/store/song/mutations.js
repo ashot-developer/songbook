@@ -10,6 +10,14 @@ export function loadBookmarks(state, payload) {
     }
 }
 
+export function setSearchedSongs(state, payload) {
+    state.searchedSongs = payload
+}
+
+export function setKeyword(state, payload) {
+    state.keywordS = payload
+}
+
 export function setMark(state, payload) {
     state.bookmarks.push(payload);
 }
